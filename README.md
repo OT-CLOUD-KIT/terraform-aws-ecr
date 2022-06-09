@@ -37,7 +37,7 @@ AWS 4.17.1
 | max_untagged_image_count             | The maximum number of untagged images that you want to retain in repository.                                                                                                                                                 | `number`       |         |   Yes    |
 | max_tagged_image_count                             | The maximum number of tagged images that you want to retain in repository.                                                                                                                                      | `number`       |         |   Yes    |
 | scan_on_push                             | Whether images should automatically be scanned on push or not.                                                                                                                                     | `bool`  |         |   Yes    |
-| image_tag_mutability                 | Whether images are allowed to overwrite existing tags.                                                                                                                                     |
+| image_tag_mutability                 | Whether images are allowed to overwrite existing tags.                   | `bool`  |         |   Yes    |
 
 ## Output
 
