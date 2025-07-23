@@ -6,6 +6,7 @@ A Terraform module to provision **private and public AWS ECR (Elastic Container 
 
 ## Architecture
 
+![ecr](https://github.com/user-attachments/assets/c61b4857-f828-407d-9f6a-37c4bf76e468)
 
 > **Note:**  
 > This module supports both public and private ECR repositories, lifecycle management, KMS encryption, and cross-account access controls.
@@ -111,6 +112,11 @@ ___
 ___
 
 ## Contributors
+
+- [Piyush Upadhyay](https://github.com/piiiyuushh)
+- [Nikita Joshi](https://github.com/jnikita19)
+
+
 
 - [Piyush Upadhyay](https://github.com/piiiyuushh)
 - [Nikita Joshi](https://github.com/jnikita19)
