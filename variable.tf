@@ -87,97 +87,18 @@ variable "kms_key_arn" {
   description = "KMS key ARN for ECR encryption"
 }
 
-##################################
-# Naming Convention Inputs
-##################################
-
 variable "env" {
-  description = "Environment code: 'd' (dev), 'p' (prod), 'q' (qa), 's' (stage), 'g' (global)."
-  type        = string
-  default     = "d"
-
-  validation {
-    condition     = contains(["d", "p", "q", "s", "g"], var.env)
-    error_message = "env must be one of 'd', 'p', 'q', 's', 'g'."
-  }
-}
-
-variable "bu" {
-  description = "Business unit name (e.g., BP, GURUKU). Max 10 characters."
-  type        = string
-  default     = "BP"
-
-  validation {
-    condition     = length(var.bu) <= 10
-    error_message = "The business unit name must be less than or equal to 10 characters."
-  }
-}
-
-variable "program" {
-  description = "Name of the program (e.g., OT, BP)."
-  type        = string
-  default     = "OT"
+  type = string
+  default = "dev"
+  
 }
 
 variable "app" {
-  description = "Application name (e.g., network, shared). Max 10 characters."
-  type        = string
-  default     = "db"
-
-  validation {
-    condition     = length(var.app) <= 10
-    error_message = "The app name must be less than or equal to 10 characters."
-  }
+  type = string
+  default = "otcloud-kit"
 }
 
-variable "team" {
-  description = "Team responsible for the application (e.g., infra, devops)."
-  type        = string
-  default     = "devops"
-}
-
-variable "region" {
-  description = "AWS region (e.g., us-east-1, ap-south-1)."
-  type        = string
-  default     = "us-east-1"
-}
-
-##################################
-# Optional Name Generator Inputs
-##################################
-
-variable "create" {
-  description = "Whether to create random suffix"
-  type        = bool
-  default     = true
-}
-
-variable "random_alphanumeric_len" {
-  description = "Length of random string to append"
-  type        = number
-  default     = 2
-}
-
-variable "special" {
-  description = "Include special characters in random string"
-  type        = bool
-  default     = false
-}
-
-variable "upper" {
-  description = "Include uppercase letters in random string"
-  type        = bool
-  default     = false
-}
-
-variable "number" {
-  description = "Include numbers in random string"
-  type        = bool
-  default     = true
-}
-
-variable "gen_no_of_names" {
-  description = "Number of names to generate"
-  type        = number
-  default     = 1
+variable "owner" {
+  type = string
+  default = "opstree"
 }

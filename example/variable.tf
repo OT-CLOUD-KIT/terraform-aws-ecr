@@ -89,102 +89,19 @@ variable "repo_details" {
   }
 }
 
-###############################
-# Naming Convention Variables
-###############################
-
 variable "env" {
-  type        = string
-  description = "Environment code: d (dev), p (prod), q (qa), s (stage), g (global)"
-  default     = "d"
-  validation {
-    condition     = contains(["d", "p", "q", "s", "g"], var.env)
-    error_message = "env must be one of: d, p, q, s, g"
-  }
+  type = string
+  default = "dev"
+  
 }
 
-variable "bu" {
-  type        = string
-  description = "Business unit name (max 10 characters)."
-  default     = "BP"
-  validation {
-    condition     = length(var.bu) <= 10
-    error_message = "Business unit name must be <= 10 characters."
-  }
+variable "owner" {
+  type = string
+  default = "opstree"
+  
 }
 
 variable "app" {
-  type        = string
-  description = "Application name (max 10 characters)."
-  default     = "db"
-  validation {
-    condition     = length(var.app) <= 10
-    error_message = "App name must be <= 10 characters."
-  }
-}
-
-variable "program" {
-  type        = string
-  description = "Program name (e.g., ot-cloud-kit)."
-  default     = "OT"
-}
-
-variable "resource" {
-  type        = string
-  description = "Optional resource name (max 15 characters)."
-  default     = "ECR"
-  validation {
-    condition     = length(var.resource) <= 20
-    error_message = "Resource name must be <= 20 characters."
-  }
-}
-
-variable "team" {
-  type        = string
-  description = "Team owner or contact email or name."
-  default     = "devops"
-}
-
-###############################
-# Name Generator Inputs
-###############################
-
-variable "create" {
-  type        = bool
-  description = "Whether to enable random suffix generation."
-  default     = true
-}
-
-variable "random_alphanumeric_len" {
-  type        = number
-  description = "Length of random string (1 to 4 characters)"
-  default     = 2
-  validation {
-    condition     = var.random_alphanumeric_len >= 1 && var.random_alphanumeric_len <= 4
-    error_message = "Length must be between 1 and 4."
-  }
-}
-
-variable "special" {
-  type        = bool
-  description = "Include special characters in generated names."
-  default     = false
-}
-
-variable "upper" {
-  type        = bool
-  description = "Include uppercase characters in generated names."
-  default     = false
-}
-
-variable "number" {
-  type        = bool
-  description = "Include numbers in generated names."
-  default     = true
-}
-
-variable "gen_no_of_names" {
-  type        = number
-  description = "Number of names to generate using random logic."
-  default     = 1
+  type = string
+  default = "otcloud-kit"
 }

@@ -30,16 +30,7 @@ repo_details = {
 }
 
 
-env      = "d"
-bu       = "BP"
-app      = "db"
-program  = "OT"
-resource = "ECR"
-team     = "devops"
+env = "dev"
+app = "otcloud-kit"
+owner = "opstree"
 
-create                  = true
-random_alphanumeric_len = 2
-special                 = false
-upper                   = false
-number                  = true
-gen_no_of_names         = 1
